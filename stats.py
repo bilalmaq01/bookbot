@@ -17,3 +17,16 @@ def get_letter_count(filepath):
     return letters
 
 
+def sort_on(list):
+    return list["num"]
+
+
+
+def formatted(dictionary):
+    formmatted_list = []
+    for chars in dictionary:
+        small_dict = {"char": chars,"num" :dictionary[chars]}
+        formmatted_list.append(small_dict)
+    formmatted_list.sort(reverse = True, key=sort_on)
+    return formmatted_list
+
