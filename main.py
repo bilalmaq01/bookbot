@@ -1,11 +1,14 @@
-from stats import get_word_count,get_letter_count,formatted
 import sys
-def get_book_text(filepath):
-    with open(filepath) as f:
-        content = f.read()
-    return content
+from stats import get_word_count, get_letter_count, formatted
+
+# get_book_text filepath should be a string, and return a string
+def get_book_text(filepath: str) -> str:
+    # open file, read-only, interpet bytes as characters
+    with open(filepath, "r", encoding="utf-8") as f:
+        return f.read()
+    
 def main():
-    if(len(sys.argv) != 2):
+    if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
     text = get_book_text(sys.argv[1])
